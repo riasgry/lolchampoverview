@@ -6,7 +6,7 @@ import useFetch from './useFetch'
 function ChampionsList() {
     const [selectedData, setSelectedData]=useState('')
     const [select, isSelect]=useState(false)
-    const{data}=useFetch('http://ddragon.leagueoflegends.com/cdn/12.17.1/data/en_US/champion.json')
+    const{data}=useFetch('https://ddragon.leagueoflegends.com/cdn/12.17.1/data/en_US/champion.json')
     const datas = data?.data
   return (
     <>

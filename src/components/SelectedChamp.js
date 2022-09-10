@@ -14,7 +14,7 @@ function SelectedChamp({selectedData,select,isSelect}) {
         select&&selectedData?(
             <div className='champ-detail'>
        
-        <img src={'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+selectedData.id+'_0.jpg'} alt="" />
+        <img src={'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+selectedData.id+'_0.jpg'} alt="" />
         <h3>{selectedData.name}</h3>
         <p>{selectedData.title}</p>
 
