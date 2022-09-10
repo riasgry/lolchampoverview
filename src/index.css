@@ -1,3 +1,6 @@
+body{
+    font-family: 'Bree Serif', sans-serif;
+}
 #root{
     width: 100vw;
     padding: 0;
@@ -11,7 +14,8 @@
     display: flex;
     flex-flow: row wrap;
     transition: transform .2s;
-    height: fit-content;
+    height: 100vh;
+    overflow-y: scroll;
 }
 .champ{
     height: 60px;
@@ -25,6 +29,54 @@
 .champ img:hover{
     transform: scale(2);
 }
-.champ-detail{
-    line-height: 0.5;
+.champ-detail,.champ-detail-loading{
+    position: relative;
+    height: fit-content;
+    min-width: 30vw;
+}
+.champ-detail-loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.champ-detail h3{
+    position: absolute;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 20px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.705), rgba(255, 255, 255, 0) 80%);
+    top: 0;
+    
+}
+.champ-detail span{
+    font-size: 14px;
+}
+.spell-list{
+    position: absolute;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+    bottom: 0;
+    margin: 20px;
+}
+
+.spell-list img{
+    
+    border: 1px solid white ;
+}
+
+.pasif{
+    position: relative;
+}
+.pasif p{
+    position: absolute;
+    color: black;
+    font-size: 10px;
+    padding: 5px;
+    bottom: 0;
+    width: 100%;
+    letter-spacing: 0.1rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.705), rgba(255, 255, 255, 0) 80%); ;
 }
