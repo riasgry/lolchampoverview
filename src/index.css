@@ -32,7 +32,7 @@ body{
 .champ-detail,.champ-detail-loading{
     position: relative;
     height: fit-content;
-    min-width: 30vw;
+    min-width: 310px;
 }
 .champ-detail-loading{
     display: flex;
