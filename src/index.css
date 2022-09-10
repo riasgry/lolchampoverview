@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root{
+    width: 100vw;
+    padding: 0;
+    background-color: azure;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.champ-list{
+    display: flex;
+    flex-flow: row wrap;
+    transition: transform .2s;
+    height: fit-content;
+}
+.champ{
+    height: 60px;
+}
+.champ img{
+    width: 60px;
+}
+.champ-name{
+    display: none;
+}
+.champ img:hover{
+    transform: scale(2);
+}
+.champ-detail{
+    line-height: 0.5;
 }
