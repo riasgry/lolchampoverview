@@ -11,12 +11,13 @@ function ChampionsList() {
   return (
     <>
     <SelectedChamp selectedData={selectedData} select={select} isSelect={isSelect} />
+    <div className="list">
       <div className='champ-list'>
           {
             datas && Object.keys(datas)?.map((key)=><Champion key={datas[key].id}{...datas[key]} setSelectedData={setSelectedData} isSelect={isSelect}/>)
           } 
       </div>
-      
+      </div>
     </>
         
     

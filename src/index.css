@@ -8,7 +8,6 @@ body{
 }
 .container{
     display: flex;
-    flex-direction: row;
 }
 .champ-list{
     display: flex;
@@ -73,6 +72,7 @@ body{
     width: 70vw;
     left: 100px;
     bottom: 0;
+    padding: 10px;
 }
 
 .pasif{
@@ -87,4 +87,35 @@ body{
     width: 100%;
     letter-spacing: 0.1rem;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.705), rgba(255, 255, 255, 0) 80%); ;
+}
+.stats{
+    background-color: rgba(255, 255, 255, 0.336);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    word-spacing: 2em;
+}
+
+@media screen and (max-width:450px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .champ-detail img:first-child{
+        width: 95%;
+    }
+    .champ-list{
+        width: 3000px;
+        height: fit-content;
+    }
+    .list{
+        width: 100vw;
+        overflow: scroll;
+    }
+    .stats{
+        right: 30px;
+    }
+    
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import SpellDetail from './SpellDetail';
+import StatValue from './StatValue';
 
 function SelectedChamp({selectedData,select,isSelect}) {
     const [spell, setSpell] = useState(null)
@@ -38,6 +39,7 @@ function SelectedChamp({selectedData,select,isSelect}) {
                     selectedData && selectedData.spells.map((a)=><img src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/spell/"+a.id+".png"} alt="" onClick={()=>spellDetail(a)} key={a.id} />)
                     }
                 </div>
+                <StatValue statChamp={selectedData.stats} />
                 {
                     spell!=null?(
                         <SpellDetail spell={spell} />
