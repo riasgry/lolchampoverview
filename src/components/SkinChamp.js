@@ -7,11 +7,11 @@ function SkinChamp({data, id}) {
     const item = document.getElementsByClassName('skin-list')[0]
     item.addEventListener("wheel", function (e) {
         if (e.deltaY > 0) {
-          item.scrollLeft += 1;
+          item.scrollLeft += 30;
           e.preventDefault()
         }
         else {
-          item.scrollLeft -= 1;
+          item.scrollLeft -= 30;
           e.preventDefault()
         }
       });
