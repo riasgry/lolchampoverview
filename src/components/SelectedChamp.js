@@ -6,7 +6,6 @@ import StatValue from './StatValue';
 
 function SelectedChamp({selectedData,select,isSelect}) {
     const [spell, setSpell] = useState(null)
-    
     useEffect(() => {
         const timer = setTimeout(() => {
           isSelect(true)
@@ -15,12 +14,22 @@ function SelectedChamp({selectedData,select,isSelect}) {
         return () => clearTimeout(timer);
       }, [select]);
 
-      const spellDetail = id=>{
-          
+      const spellDetail = (id, key)=>{
+          let element =document.getElementsByClassName('spell-list')[0]
+          element && Object.keys(element.children).map(e => 
+              element.children[e].classList.remove("active"))
+          spell!==null && id.name===spell.name?(
+            element.children[key+1].classList.remove('active')
+          ):(
+            element.children[key+1].classList.add('active')
+          )
+         
+        
           spell!==null && id.name===spell.name?(
               setSpell(null)
           ):(
             setSpell(id)
+            
           )
         
     }
@@ -39,7 +48,7 @@ function SelectedChamp({selectedData,select,isSelect}) {
                     <p><strong>Passive</strong></p>
                     </div>
                     {
-                    selectedData && selectedData.spells.map((a)=><img src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/spell/"+a.id+".png"} alt="" onClick={()=>spellDetail(a)} key={a.id} />)
+                    selectedData && selectedData.spells.map((a, b)=><img src={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/spell/"+a.id+".png"} alt="" onClick={()=>spellDetail(a, b)} key={a.id} />)
                     }
                 </div>
                 <StatValue statChamp={selectedData.stats} />
