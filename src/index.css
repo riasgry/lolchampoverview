@@ -96,6 +96,17 @@ body{
     padding: 20px;
     word-spacing: 2em;
 }
+.skin-list{
+    width: 305px;
+    overflow: scroll;
+}
+.skin{
+    display: flex;
+    column-gap: 10px;
+}
+.skin-list .skin img{
+    width: 150px;
+}
 
 @media screen and (max-width:450px){
     .container{
@@ -117,5 +128,7 @@ body{
     .stats{
         right: 30px;
     }
-    
+    .skin-list{
+        width: 100%;
+    }
 }

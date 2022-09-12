@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import SkinChamp from './SkinChamp';
 import SpellDetail from './SpellDetail';
 import StatValue from './StatValue';
 
 function SelectedChamp({selectedData,select,isSelect}) {
     const [spell, setSpell] = useState(null)
+    
     useEffect(() => {
         const timer = setTimeout(() => {
           isSelect(true)
@@ -27,6 +29,7 @@ function SelectedChamp({selectedData,select,isSelect}) {
     <>
     {
         select&&selectedData?(
+          <>
             <div className='champ-detail'>
                 <img src={'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+selectedData.id+'_0.jpg'} alt="" />
                 <h3>{selectedData.name} <br /> <span>{selectedData.title}</span> </h3>
@@ -41,13 +44,16 @@ function SelectedChamp({selectedData,select,isSelect}) {
                 </div>
                 <StatValue statChamp={selectedData.stats} />
                 {
-                    spell!=null?(
-                        <SpellDetail spell={spell} />
-                    ):(console.log('data kosong'))
+                    spell!=null?
+                        <SpellDetail spell={spell} />:''
+                    
                 }
+
 
                 
             </div>
+            <SkinChamp data={selectedData.skins} id={selectedData.id}/>
+          </>
         ):(
             <div className='champ-detail-loading'>
             <h1>Loading</h1>

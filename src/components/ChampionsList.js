@@ -10,11 +10,13 @@ function ChampionsList() {
     const datas = data?.data
   return (
     <>
-    <SelectedChamp selectedData={selectedData} select={select} isSelect={isSelect} />
+    <div className='champ-container'>
+      <SelectedChamp selectedData={selectedData} select={select} isSelect={isSelect} />
+    </div>
     <div className="list">
       <div className='champ-list'>
           {
-            datas && Object.keys(datas)?.map((key)=><Champion key={datas[key].id}{...datas[key]} setSelectedData={setSelectedData} isSelect={isSelect}/>)
+            datas && Object.keys(datas)?.map((key)=><Champion key={datas[key].id}{...datas[key]} selectedData={selectedData} setSelectedData={setSelectedData} isSelect={isSelect}/>)
           } 
       </div>
       </div>
