@@ -17,13 +17,13 @@ function SkinChamp({data, id}) {
       });
     
    },[])
+   
   return (
     <div className='skin-list'>
-        <div className="skin">
+      
         {
-            data?.map((a)=><Skin key={a.id} {...a} idChamp={id} />)
+            data?.map((a,b)=><Skin key={a.id} {...a} idChamp={id} index={b}/>)
         }
-        </div>
        
     </div>
   )

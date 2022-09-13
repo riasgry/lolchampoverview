@@ -5,11 +5,15 @@ import React from 'react'
 function SpellDetail({spell}) {
   return (
     <div className='spell-detail'>
-        <strong>{spell.name}</strong>
-        <p>{spell.description}</p>
-        <p><FontAwesomeIcon icon={faDroplet} /> {spell.costBurn} mana(s)</p>
+      
+      <strong>{spell.name}</strong>
+      <p><FontAwesomeIcon icon={faDroplet} /> {spell.costBurn} mana(s)</p>
         <p>
         <FontAwesomeIcon icon={faHourglass} />{spell.cooldownBurn} second(s)</p>
+     
+        
+        <p>description: <br /> {spell.description}</p>
+       
     </div>
   )
 }

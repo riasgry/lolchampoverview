@@ -78,6 +78,9 @@ body{
     bottom: 0;
     padding: 10px;
 }
+.spell-detail div{
+    display: flex;
+}
 
 .pasif{
     position: relative;
@@ -102,14 +105,33 @@ body{
 }
 .skin-list{
     width: 305px;
+    display: flex;
     overflow: scroll;
 }
 .skin{
     display: flex;
-    column-gap: 10px;
+    flex-direction: column;
+    margin: 10px;
+    
 }
+
+.skin-list .active{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.603);
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+}
+.skin-list .active img{
+    margin:auto;
+}
+
 .skin-list .skin img{
-    width: 150px;
+    width: 100%;
+    min-width: 150px;
 }
 
 @media screen and (max-width:450px){
