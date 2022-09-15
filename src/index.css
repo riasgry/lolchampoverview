@@ -81,6 +81,10 @@ body{
 .spell-detail div{
     display: flex;
 }
+.spell-detail video{
+    width: 100%;
+    max-width: 400px;
+}
 
 .pasif{
     position: relative;
@@ -155,6 +159,9 @@ body{
         right: 30px;
     }
     .skin-list{
+        width: 100%;
+    }
+    .spell-detail video{
         width: 100%;
     }
 }

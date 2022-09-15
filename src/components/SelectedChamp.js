@@ -6,6 +6,7 @@ import StatValue from './StatValue';
 
 function SelectedChamp({selectedData,select,isSelect}) {
     const [spell, setSpell] = useState(null)
+    const [keys, setKeys] = useState(null)
     useEffect(() => {
         const timer = setTimeout(() => {
           isSelect(true)
@@ -15,10 +16,10 @@ function SelectedChamp({selectedData,select,isSelect}) {
       }, [select]);
 
       const spellDetail = (id, key)=>{
+        setKeys(key)
           let element =document.getElementsByClassName('spell-list')[0]
           element && Object.keys(element.children).map(e => 
               element.children[e].classList.remove("active"))
-
           spell!==null && id.name===spell.name?(
             element.children[key].classList.remove('active')
           ):(
@@ -55,7 +56,7 @@ function SelectedChamp({selectedData,select,isSelect}) {
                 <StatValue statChamp={selectedData.stats} />
                 {
                     spell!=null?
-                        <SpellDetail spell={spell} />:''
+                        <SpellDetail spell={spell} idChamp={selectedData.key} keys={keys} />:''
                     
                 }
 
